@@ -50,7 +50,8 @@ namespace Character
         public IDamageable FindTarget()
         {
             var results = Physics.OverlapSphere(transform.position, _currentRadius,TargetMask);
-            if (results.Length == 0) return null;
+            
+            if (results.Length == 0) return Target = null;
             
             foreach (var col in results)
             {
@@ -65,12 +66,11 @@ namespace Character
             
                 return Target = col.GetComponent<IDamageable>();
             }
-        
+            
             if(Target != null)
                 OnLostTarget?.Invoke();
-        
-            Target = null;
-            return Target;
+            
+            return Target = null;
         }
     
         public Vector3 GetTargetPosition()
@@ -109,6 +109,12 @@ namespace Character
             {
                 Handles.DrawWireArc(transform.position, Vector3.up, transform.forward, Angle, Radius, 7.5f);
                 Handles.DrawWireArc(transform.position, Vector3.up, transform.forward, -Angle, Radius, 7.5f);
+            }
+
+            if (Target != null)
+            {
+                Handles.DrawLine(transform.position,Target.transform.position);
+                Handles.Label((Target.transform.position + transform.position) * .5f, Vector3.Distance(transform.position, Target.transform.position).ToString("F2"));
             }
         
         }

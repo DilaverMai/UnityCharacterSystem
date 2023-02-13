@@ -42,7 +42,7 @@ namespace Character
         {
             base.OnDrawGizmos();
         
-            if(usingSkillData.Length == 0) return;
+            if(skills == null) return;
             
             Handles.color = Color.magenta;
             foreach (var skill in skills)
@@ -56,6 +56,12 @@ namespace Character
                 Handles.DrawWireArc(position, Vector3.up, forward, -skill.SkillAngle, skill.SkillRange, 7.5f);
             }
         }
+        
     }
 
+}
+
+public interface IStateAttacker
+{
+    void ChangeState(string stateName);
 }

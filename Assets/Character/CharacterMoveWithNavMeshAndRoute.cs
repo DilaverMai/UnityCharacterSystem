@@ -1,37 +1,39 @@
-using Character;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterMoveWithNavMeshAndRoute : CharacterMoveWithNavMesh, IRoute
+namespace Character
 {
-    [BoxGroup("Data")]
-    public WayPoint WayPoints;
-    [BoxGroup("Event")]
-    public UnityEvent OnNextWayPoint;
-    
-    public override void Move(Vector3 position)
+    public class CharacterMoveWithNavMeshAndRoute : CharacterMoveWithNavMesh, IRoute
     {
-        NavAgent.SetDestination(position);
+        [BoxGroup("Data")]
+        public WayPoint WayPoints;
+        [BoxGroup("Event")]
+        public UnityEvent OnNextWayPoint;
+    
+        public override void Move(Vector3 position)
+        {
+            NavAgent.SetDestination(position);
 
-        if (ReachedDestination())
-            NextWayPoint();
-    }
+            if (ReachedDestination())
+                NextWayPoint();
+        }
     
-    public void RouteMover()
-    {
-        Move(WayPoints.CurrentWayPoint.Position);
-    }
+        public void RouteMover()
+        {
+            Move(WayPoints.CurrentWayPoint.Position);
+        }
     
-    public Vector3 NextWayPoint()
-    {
-        OnNextWayPoint?.Invoke();
-        return WayPoints.NextWayPoint();
-    }
+        public Vector3 NextWayPoint()
+        {
+            OnNextWayPoint?.Invoke();
+            return WayPoints.NextWayPoint();
+        }
 
-    public void OnDrawGizmos()
-    {
-        if(WayPoints.WayPoints != null)
-            WayPoints.GizmosDraw(transform);
+        public void OnDrawGizmos()
+        {
+            if(WayPoints.WayPoints != null)
+                WayPoints.GizmosDraw(transform);
+        }
     }
 }
