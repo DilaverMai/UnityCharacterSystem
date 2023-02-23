@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1ebaf2aa804073b0ed6aaccf44f1ee, type: 3}
   m_Name: PlayerControllerData
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  rotationSpeed: 15
+  moveSpeed: 5
+  rotationSpeed: 25
   jumpForce: 10
   gravity: -9.81
   ForwardMovement: 1
   LocamationEnabled: 1
-  LocamationSpeed: 5
+  LocamationSpeed: 3
