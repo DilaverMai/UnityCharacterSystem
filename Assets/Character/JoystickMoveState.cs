@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Character
@@ -10,26 +9,23 @@ namespace Character
         {
             //calculate angle by joystick input
             var angle = Mathf.Atan2(position.x, position.z) * Mathf.Rad2Deg;
+            if(angle == 0) return;
+            
             //rotate character
             _characterController.transform.rotation = 
-                Quaternion.Lerp(_characterController.transform.rotation, Quaternion.Euler(0, angle, 0), _playerControllerData.rotationSpeed * Time.fixedDeltaTime);
+                Quaternion.RotateTowards(_characterController.transform.rotation, 
+                    Quaternion.Euler(0, angle, 0), 
+                    _playerControllerData.rotationSpeed);
         }
 
         public override void Jump(Vector3 centerPoint)
         {
-            throw new NotImplementedException();
+            //calculate jump direction
+            var jumpDirection = (centerPoint - _characterController.transform.position).normalized;
+            //add jump force
+            _characterController.Move(jumpDirection * _playerControllerData.jumpForce * Time.fixedDeltaTime);
         }
-
-        public override void JumpBack(Vector3 centerPoint)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override bool ReachedDestination()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public override Vector3 CalculateMovement(ref Vector3 input)
         {
             return new Vector3(input.x, _playerControllerData.gravity, input.y) * (_playerControllerData.moveSpeed * Time.fixedDeltaTime);

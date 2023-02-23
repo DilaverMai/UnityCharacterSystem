@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MaiGames.Scripts.Runtime.Base.InputSystem;
 using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Character
@@ -37,7 +38,7 @@ namespace Character
     
         public void OnUpdate()
         {
-            if(currentState)
+            if(!currentState) return;
                 currentState.Move(Joystick.Instance.GetVector());
         }
 

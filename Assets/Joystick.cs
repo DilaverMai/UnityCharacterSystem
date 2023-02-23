@@ -118,6 +118,7 @@ namespace MaiGames.Scripts.Runtime.Base.InputSystem
         {
             _canvasGroup.alpha = 0;
             _pointPosition = Vector2.zero;
+            _knob.transform.localPosition = Vector2.zero;
             OnDisableJoystick?.Invoke();
         }
 

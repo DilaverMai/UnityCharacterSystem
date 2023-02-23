@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: PlayerControllerData
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  rotationSpeed: 10
-  locamationEnabled: 1
+  rotationSpeed: 15
   jumpForce: 10
   gravity: -9.81
+  ForwardMovement: 1
+  LocamationEnabled: 1
+  LocamationSpeed: 5

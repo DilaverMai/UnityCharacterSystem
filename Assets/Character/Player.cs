@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -26,6 +27,12 @@ namespace Character
                 playerJoystickController.OnUpdate();
                 yield return new WaitForFixedUpdate();
             }
+        }
+
+
+        private void OnDrawGizmos()
+        {
+            playerJoystickController.currentState?.OnGizmos();
         }
     }
 
