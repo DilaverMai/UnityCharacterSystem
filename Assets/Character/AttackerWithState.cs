@@ -1,15 +1,21 @@
 using System.Collections.Generic;
-using Character;
+using Sirenix.OdinInspector;
 
-public class AttackerWithState : Attacker, IStateAttacker
+namespace Character
 {
-    public State CurrentState;
-    public Dictionary<string,State> States = new Dictionary<string, State>();
-
-
-    public void ChangeState(string stateName)
+    public class AttackerWithState : Attacker, IStateAttacker
     {
-        if (States.ContainsKey(stateName))
-            CurrentState = States[stateName];
+        [BoxGroup("State")]
+        public State CurrentState;
+        [BoxGroup("State")]
+        [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout)]
+        public Dictionary<string,State> States = new Dictionary<string, State>();
+
+
+        public void ChangeState(string stateName)
+        {
+            if (States.ContainsKey(stateName))
+                CurrentState = States[stateName];
+        }
     }
 }

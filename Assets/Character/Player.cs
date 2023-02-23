@@ -1,15 +1,33 @@
-using Character;
+using System.Collections;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class Player : CharacterBase
+namespace Character
 {
-    public override void OnDeath()
+    public class Player : CharacterBase
     {
-        
+        [ShowInInspector]
+        public PlayerJoystickController playerJoystickController;
+        public override void OnDeath()
+        {
+            
+        }
+
+        public override void OnSpawn()
+        {
+            playerJoystickController.Initialize();
+            StartCoroutine(OnUpdater());
+        }
+
+        private IEnumerator OnUpdater()
+        {
+            while (CharacterStates.Die != CharacterState)
+            {
+                playerJoystickController.OnUpdate();
+                yield return new WaitForFixedUpdate();
+            }
+        }
     }
 
-    public override void OnSpawn()
-    {
-        
-    }
+
 }

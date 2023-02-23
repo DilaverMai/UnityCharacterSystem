@@ -7,7 +7,7 @@ using UnityEngine.Events;
 namespace Character
 {
     [System.Serializable]
-    public class Attacker :MonoBehaviour, IAttackable,IInitializable
+    public class Attacker :SerializedMonoBehaviour, IAttackable,IInitializable
     {
         [BoxGroup("Data")]
         public AttackerData attackerData;

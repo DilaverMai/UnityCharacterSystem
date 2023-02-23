@@ -47,8 +47,10 @@ namespace Character
             Handles.color = Color.magenta;
             foreach (var skill in skills)
             {
-                var position = transform.position;
-                var forward = transform.forward;
+                var thisTransform = transform;
+                
+                var position = thisTransform.position;
+                var forward = thisTransform.forward;
             
                 Handles.Label(position + (forward * skill.SkillRange) ,
                     skill.SkillName + "CoolDown:" + skill.CurrentCoolTime.ToString("0.00"), EditorStyles.boldLabel);

@@ -1,3 +1,4 @@
+using Character;
 using Unity.VisualScripting;
 
 [UnitCategory("AI/Search Player")]
