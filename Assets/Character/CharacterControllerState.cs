@@ -1,87 +1,80 @@
 using System;
-using UnityEditor.VersionControl;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 using Task = System.Threading.Tasks.Task;
 
 namespace Character
 {
     [Serializable]
-    public abstract class CharacterControllerState: ScriptableObject
+    public abstract class CharacterControllerState : ScriptableObject
     {
         public string stateName;
-        protected PlayerControllerData _playerControllerData;
-        protected CharacterController _characterController;
+        public PlayerControllerData playerControllerData;
+        protected CharacterController CharacterController;
 
-        private Vector3 targetPosition;
-        
+        protected Vector3 TargetPosition;
+
         public virtual void Move(Vector3 position)
         {
-            if(position != Vector3.zero)
+            if (position.magnitude > 0)
             {
-                Rotation(ref targetPosition);
-                targetPosition = CalculateMovement(ref position);
+                TargetPosition = CalculateMovement(ref position);
+                Rotation(ref TargetPosition);
             }
-            else LocamationMovement(targetPosition);
-            
-            _characterController.Move(targetPosition);
+            else
+            {
+                if (TargetPosition.magnitude > 0)
+                    LocamationMovement();
+            }
+
+            CharacterController.Move(TargetPosition);
         }
-    
-        public virtual void Rotation(ref Vector3 position)
-        {
-            _characterController.transform.rotation = Quaternion.LookRotation(position);
-        }
-    
+
+        public abstract void Rotation(ref Vector3 position);
         public abstract void Jump(Vector3 centerPoint);
+
         public virtual void JumpBack(Vector3 centerPoint)
         {
-            
         }
+
         public virtual bool ReachedDestination()
         {
-            return Vector3.Distance(_characterController.transform.position, targetPosition) <= 0.1f;
+            return Vector3.Distance(CharacterController.transform.position, TargetPosition) <= 0.1f;
         }
 
-        public virtual async void LocamationMovement(Vector3 movement)
+        public virtual void LocamationMovement()
         {
-            if(targetPosition.magnitude <= 0) return;
-            
-            while (targetPosition.magnitude > 0)
-            {
-               targetPosition = Vector3.MoveTowards(targetPosition, Vector3.zero,_playerControllerData.LocamationSpeed * Time.fixedDeltaTime);
-               await Task.Delay(50);
-               if(!Application.isPlaying) break;
-            }
+            var lerpPosition = Vector3.MoveTowards(
+                TargetPosition,
+                Vector3.zero,
+                playerControllerData.LocamationSpeed * Time.fixedDeltaTime);
+
+            lerpPosition.y = playerControllerData.gravity * Time.fixedDeltaTime;
+            TargetPosition = lerpPosition;
         }
 
-        public virtual Vector3 CalculateMovement(ref Vector3 input)
-        {
-            if (!_playerControllerData.ForwardMovement)
-                return input * (_playerControllerData.moveSpeed * Time.fixedDeltaTime);
+        public abstract Vector3 CalculateMovement(ref Vector3 input);
 
-            var transform = _characterController.transform;
-            return transform.forward * input.z + transform.right * input.x;
-        }
-
-        public void Initialize(ref PlayerControllerData playerControllerData, ref CharacterController characterController)
+        public void Initialize(ref CharacterController characterController)
         {
-            this._playerControllerData = playerControllerData;
-            this._characterController = characterController;
+            this.CharacterController = characterController;
         }
 
         public void OnGizmos()
         {
             //calculate destination positon by character controller velocity
-            if(_playerControllerData == null || _characterController == null) 
+            if (playerControllerData == null || CharacterController == null)
                 return;
-            var pos = _characterController.velocity * Time.fixedDeltaTime * _playerControllerData.moveSpeed;
-            var position = _characterController.transform.position;
+            var pos = CharacterController.velocity * Time.fixedDeltaTime * playerControllerData.moveSpeed;
+            var position = CharacterController.transform.position;
             var destinationPosition = position + pos;
 
-            
+
             Gizmos.color = Color.green;
             Gizmos.DrawSphere(destinationPosition, 0.25f);
-            
-            Gizmos.DrawLine(position,destinationPosition);
+
+            Gizmos.DrawLine(position, destinationPosition);
         }
     }
 }

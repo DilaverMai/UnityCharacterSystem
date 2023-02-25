@@ -14,6 +14,25 @@ namespace Character
             
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("e");
+                carrr.sitPoint = transform;
+                carrr.Sit(this);
+            }
+        }
+
+        public Car carrr;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out Car car))
+            {
+                carrr = car;
+            }
+        }
+
         public override void OnSpawn()
         {
             playerJoystickController.Initialize();

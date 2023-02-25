@@ -18,4 +18,4 @@ MonoBehaviour:
   gravity: -9.81
   ForwardMovement: 1
   LocamationEnabled: 1
-  LocamationSpeed: 3
+  LocamationSpeed: 1

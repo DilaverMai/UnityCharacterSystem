@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using MaiGames.Scripts.Runtime.Base.InputSystem;
 using Sirenix.OdinInspector;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Character
@@ -49,7 +48,7 @@ namespace Character
             
             foreach (var state in characterControllerStates)
             {
-                state.Initialize(ref playerControllerData, ref characterController); 
+                state.Initialize(ref characterController); 
             }
             
             currentState = characterControllerStates[0];
