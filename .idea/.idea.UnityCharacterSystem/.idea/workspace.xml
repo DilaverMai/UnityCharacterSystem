@@ -1,57 +1,290 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ce054e3-31a6-4b58-9a92-76cf86ebf223" name="Changes" comment="" />
+    <list default="true" id="7ce054e3-31a6-4b58-9a92-76cf86ebf223" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME].meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Datas.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Datas/PlayerStateAttackData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Datas/PlayerStateAttackData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Datas/StatData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Datas/StatData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Datas/State EnemyStateAttackData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Datas/State EnemyStateAttackData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scenes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scenes/Test - Attacker.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scenes/Test - Attacker.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/EnemyStateAttackData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/EnemyStateAttackData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/PlayerStateAttackData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/PlayerStateAttackData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/StateAttackData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/StateAttackData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/SwordAttackState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/SwordAttackState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/FinderData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/FinderData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/StateExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/StateExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Triggers/EnemyAttacker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Triggers/EnemyAttacker.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Enemy.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Enemy/EnemyAnimationSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Enemy/EnemyAnimationSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Enemy/EnemyBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Enemy/EnemyBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Enemy/StandardEnemy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Enemy/StandardEnemy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Player/CharacterControllerState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Player/CharacterControllerState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Player/CharacterMoveWithNavMesh.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Player/CharacterMoveWithNavMesh.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Player/CharacterMoveWithNavMeshAndRoute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Player/CharacterMoveWithNavMeshAndRoute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserSettings/Search.settings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityCharacterSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityCharacterSystem/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Car.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Car.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Abstracs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Abstracs/Character.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Abstracs/Character.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Abstracs/CharacterAnimationSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Abstracs/CharacterAnimationSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Abstracs/EnemyBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Abstracs/EnemyBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Attacker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Attacker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/AttackerWithSkill.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/AttackerWithSkill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/AttackerWithState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/AttackerWithState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/CharacterControllerState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/CharacterControllerState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/CharacterMoveWithNavMesh.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/CharacterMoveWithNavMesh.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/CharacterMoveWithNavMeshAndRoute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/CharacterMoveWithNavMeshAndRoute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/DamageableFinderWithLayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/DamageableFinderWithLayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/AttackerData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/AttackerData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/AttackerData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/AttackerData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/AttackerWithSkill.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/AttackerWithSkill.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/CarControllerData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/CarControllerData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/JoyStickCar.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/JoyStickCar.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/MoveData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/MoveData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/ParticleAnim.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/ParticleAnim.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/Player Controll States.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/Player Controll States/JoySticTargetPositionkMoveState.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/Player Controll States/JoySticTargetPositionkMoveState.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/Player Controll States/NormalMoveState.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/Player Controll States/NormalMoveState.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/PlayerControllerData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/PlayerControllerData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/WayPoint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Datas/WayPoint.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/EnemyAnimationSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/EnemyAnimationSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/HealthSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/HealthSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/ISkillable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/ISkillable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IAnimable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IAnimable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IAttackable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IAttackable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IDamageable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IDamageable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IFinder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IFinder.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IInitializable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IInitializable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IMoveable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IMoveable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IMoveableUnit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IMoveableUnit.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IRoute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IRoute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IUpdater.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Interfaces/IUpdater.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/JoySticTargetPositionkMoveState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/JoySticTargetPositionkMoveState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/JoystickMoveState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/JoystickMoveState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/MoveData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/MoveData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Player.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/PlayerControllerData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/PlayerControllerData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/PlayerJoystickController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/PlayerJoystickController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Skill.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Skill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/StandartEnemy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/StandartEnemy.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/State.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/State.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Triggers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Triggers/AttackTrigger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/Triggers/AttackTrigger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/UsingSkillData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/UsingSkillData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/VisualScripting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/VisualScripting/MoveUnit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/VisualScripting/MoveUnit.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/VisualScripting/RouteUnit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/VisualScripting/RouteUnit.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/VisualScripting/SearchPlayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/VisualScripting/SearchPlayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/VisualScripting/SearchTarget.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Character/VisualScripting/SearchTarget.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/EnumStorage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/EnumStorage/ItemNames.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/EnumStorage/ItemNames.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/ISellable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/ISellable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/IStackable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/IStackable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/IUseble.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/IUseble.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Inventory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/InventoryEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/InventoryEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/ItemData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/ItemData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/Item.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/Item.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/SellableAndStackableItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/SellableAndStackableItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/SellableItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/SellableItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/StackableItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/StackableItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/UsableAndSellableAndStackableItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/UsableAndSellableAndStackableItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/UsableAndSellableItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/UsableAndSellableItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/UsableAndStackableItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/UsableAndStackableItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/UsableItemData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Items/UsableItemData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/New Requirement List.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/New Requirement List.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/PlayerBag.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/PlayerBag.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/PlayerLevel.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/PlayerLevel.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/PlayerLevel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/PlayerLevel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Resources/Items.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Resources/Items/PlayerHealth.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Resources/Items/PlayerHealth.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Resources/Items/PlayerLevel.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/Resources/Items/PlayerLevel.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/UI/InventoryUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/UI/InventoryUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/UI/Slot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InventorySystem/UI/Slot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JoyStickCar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JoyStickCar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Joystick.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Joystick.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Others/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Others/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Others/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Others/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Others/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Others/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Zenject-ReflectionBaking.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stats.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stats/Stat.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stats/Stat.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stats/StatData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stats/StatData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/Requirement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/Requirement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/RequirementList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/RequirementList.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/Upgrade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/Upgrade.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/UpgradeEffect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/UpgradeEffect.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/UpgradeManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UpgradeSystem/UpgradeManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Car.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InventorySystem/EnumStorage/ItemNames.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InventorySystem/InventoryEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InventorySystem/PlayerLevel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InventorySystem/UI/InventoryUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InventorySystem/UI/Slot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Stats/Stat.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Test.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Abstracs/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[GAME]/Scripts/Enemy/StandardEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[GAME]/Scripts/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.2/Runtime/SharedStatic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.6.4/Editor/treeview/TimelineDragging.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/MenuOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/DefaultControls.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/MaskClipping/RectMask2DClipping.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Core/Unity/Singleton.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48ff9509a05740228ce2796861cdc1d51a000/88/67ccd90a/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2LgF2rsbNMmEByzOFGcYWMhO3GT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Discover.Launch.Via.Unity": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "/Users/dilaverserif/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
-      "/Users/dilaverserif/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
-      "/Users/dilaverserif/.local/share/Symbols/src"
+      "C:\\Users\\dilav\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\dilav\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\dilav\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.18f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.19f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -59,7 +292,7 @@
       <method v="2" />
     </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.18f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.19f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -103,15 +336,25 @@
       <workItem from="1676982863508" duration="25606000" />
       <workItem from="1677177402347" duration="6149000" />
       <workItem from="1677219302207" duration="10432000" />
+      <workItem from="1677329333187" duration="46000" />
+      <workItem from="1677329547430" duration="112000" />
+      <workItem from="1677329670010" duration="1641000" />
+      <workItem from="1677331342860" duration="19206000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
