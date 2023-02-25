@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 995284}
   - component: {fileID: 995285}
   - component: {fileID: 995286}
+  - component: {fileID: 995287}
   m_Layer: 0
   m_Name: Attacker
   m_TagString: Untagged
@@ -194,6 +195,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Anim: {fileID: 0}
   ParticleAnims: []
+--- !u!114 &995287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e850ca6e1fde41c0b53dec15b66c950e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FinderData: {fileID: 0}
+  AfterFindData: {fileID: 0}
+  OnFindTarget:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLostTarget:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &15965784
 GameObject:
   m_ObjectHideFlags: 0
