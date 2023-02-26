@@ -1,10 +1,7 @@
 using System;
 using _GAME_.Scripts.Character.Abstracs;
 using UnityEngine;
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 namespace _GAME_.Scripts.Character.Interfaces
 {
     public interface IDamageable

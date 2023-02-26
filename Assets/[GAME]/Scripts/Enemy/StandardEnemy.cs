@@ -3,13 +3,9 @@ using _GAME_.Scripts.Character.Abstracs;
 using Character;
 using Sirenix.OdinInspector;
 using System.Collections;
-<<<<<<< Updated upstream
 using _GAME_.Scripts.Character.Interfaces;
 using UnityEngine;
 
-=======
-using UnityEngine;
->>>>>>> Stashed changes
 namespace _GAME_.Scripts.Enemy
 {
     public class StandardEnemy : EnemyBase
@@ -62,17 +58,8 @@ namespace _GAME_.Scripts.Enemy
         {
             CharacterState = CharacterStates.Die;
         }
-<<<<<<< Updated upstream
 
 
-        IEnumerator OnUpdater()
-        {
-            while (CharacterState != CharacterStates.Die)
-            {
-                yield return new WaitForFixedUpdate();
-                foreach (var updater in _updaters)
-                    updater.OnUpdate();
-=======
         
         private IEnumerator OnUpdater()
         {
@@ -86,7 +73,6 @@ namespace _GAME_.Scripts.Enemy
                         findTarget.transform.position);
                 }
                 yield return new WaitForFixedUpdate();
->>>>>>> Stashed changes
             }
         }
         

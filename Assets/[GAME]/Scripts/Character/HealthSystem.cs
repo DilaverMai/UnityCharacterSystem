@@ -1,9 +1,6 @@
 using _GAME_.Scripts.Character.Abstracs;
 using _GAME_.Scripts.Character.Interfaces;
-<<<<<<< Updated upstream
 using Character;
-=======
->>>>>>> Stashed changes
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;

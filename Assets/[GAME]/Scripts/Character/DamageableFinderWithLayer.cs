@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-=======
-using _GAME_.Scripts.Character;
->>>>>>> Stashed changes
 using _GAME_.Scripts.Character.Interfaces;
 using Sirenix.OdinInspector;
 using UnityEditor;
@@ -11,12 +7,9 @@ using UnityEngine.Events;
 namespace _GAME_.Scripts.Character
 {
     public class DamageableFinderWithLayer: MonoBehaviour,IUpdater, IFinder<IDamageable>
-<<<<<<< Updated upstream
     { 
        [BoxGroup("Data")]
-=======
-    {
->>>>>>> Stashed changes
+       
        public FinderData FinderData;
        [BoxGroup("Data")]
        public FinderData AfterFindData;
@@ -106,10 +99,6 @@ namespace _GAME_.Scripts.Character
             }
         
         }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
         public void OnUpdate()
         {
             FindTarget();

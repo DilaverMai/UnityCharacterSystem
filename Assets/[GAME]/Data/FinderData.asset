@@ -12,16 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c131821dd0bc494abd065f150c76408a, type: 3}
   m_Name: FinderData
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream:Assets/[GAME]/Datas/FinderData.asset
   Radius: 10
   Angle: 45
   TargetMask:
     serializedVersion: 2
-    m_Bits: 128
-=======
-  Radius: 5
-  Angle: 25
-  TargetMask:
-    serializedVersion: 2
-    m_Bits: 64
->>>>>>> Stashed changes:Assets/[GAME]/Data/FinderData.asset
+    m_Bits: 0
