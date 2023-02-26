@@ -90,6 +90,7 @@ namespace _GAME_.Scripts.UpgradeSystem
 		
 			if (!upgradeData.AddItem(itemName, count)) return;
 			if (upgradeData.NextLevel()) return;
+			if (!upgradeData.IsEmpty()) return;
 			
 			Debug.Log("Upgrade complete");
 			Upgrades.Remove(upgradeData);

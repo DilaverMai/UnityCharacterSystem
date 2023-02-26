@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _GAME_.Scripts.UpgradeSystem
 {
@@ -13,7 +14,6 @@ namespace _GAME_.Scripts.UpgradeSystem
 			public ItemsItemNames ItemName;
 			public int RequiredAmount;
 			public int CurrentAmount;
-			
 			public bool IsRequirementMet()
 			{
 				return CurrentAmount >= RequiredAmount;

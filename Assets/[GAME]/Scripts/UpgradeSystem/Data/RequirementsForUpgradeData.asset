@@ -18,8 +18,10 @@ MonoBehaviour:
   - Level: 0
     RequirementsForUpgrade:
     - ItemName: 1
-      RequiredAmount: 5
-      CurrentAmount: 0
+      RequiredAmount: 1
+      CurrentAmount: 1
+  - Level: 0
+    RequirementsForUpgrade:
     - ItemName: 2
       RequiredAmount: 5
       CurrentAmount: 0

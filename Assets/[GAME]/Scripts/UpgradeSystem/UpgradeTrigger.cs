@@ -14,4 +14,11 @@ public class UpgradeTrigger : MonoBehaviour
       var upgrade = upgradeManager.GetUpgradeWithID(UpgradeID);
       upgradeManager.AddCountToUpgrade(upgrade,ItemName,1);
    }
+   
+   [Button]
+   public void LogLevel(int lvl)
+   {
+      var upgradeManager = FindObjectOfType<UpgradeManager>();
+      var upgrade = upgradeManager.GetUpgradeWithID(UpgradeID);
+   }
 }

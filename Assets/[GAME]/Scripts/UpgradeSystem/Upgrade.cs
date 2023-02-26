@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using static _GAME_.Scripts.UpgradeSystem.RequirementsForUpgradeData;
 
 namespace _GAME_.Scripts.UpgradeSystem
@@ -14,6 +15,8 @@ namespace _GAME_.Scripts.UpgradeSystem
 	
 		public RequirementLevelArray[] RequirementsForUpgrade;
 		
+		public UnityEvent<int> UpgradeEffect;
+
 		public Upgrade(RequirementsForUpgradeData data)
 		{
 			if (data == null) return;
@@ -29,7 +32,12 @@ namespace _GAME_.Scripts.UpgradeSystem
 		{
 			MaxLevel = RequirementsForUpgrade.Length;
 			CurrentLevel++;
-			return CurrentLevel < MaxLevel;
+			return CurrentLevel <= MaxLevel;
+		}
+		
+		public bool IsEmpty()
+		{
+			return RequirementsForUpgrade.Length == 0;
 		}
 		
 		public RequirementLevelArray GetRequirementsForUpgrade(int level)
@@ -44,9 +52,9 @@ namespace _GAME_.Scripts.UpgradeSystem
 		
 		public bool AddItem(ItemsItemNames itemName,int amount)
 		{
-			if (RequirementsForUpgrade == null) return false;
 			var currentRequirements = GetCurrentRequirementsForUpgrade();
-
+			if (currentRequirements == null) return false;
+			
 			foreach (var upgradeItem in currentRequirements.RequirementsForUpgrade)
 			{
 				if (upgradeItem.ItemName == itemName)
@@ -54,7 +62,7 @@ namespace _GAME_.Scripts.UpgradeSystem
 					if (upgradeItem.AddItem(amount))
 					{
 						Debug.Log("Requirement met");
-						currentRequirements.RequirementsForUpgrade.Remove(upgradeItem);
+						//currentRequirements.RequirementsForUpgrade.Remove(upgradeItem);
 						return true;
 					}
 				}
