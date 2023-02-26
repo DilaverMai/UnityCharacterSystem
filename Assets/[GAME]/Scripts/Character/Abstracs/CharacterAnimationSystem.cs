@@ -1,8 +1,9 @@
 using System;
+using Character;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Character
+namespace _GAME_.Scripts.Character.Abstracs
 {
     [Serializable]
     public abstract class CharacterAnimationSystem<T>:MonoBehaviour,IAnimable<T> where T:Enum

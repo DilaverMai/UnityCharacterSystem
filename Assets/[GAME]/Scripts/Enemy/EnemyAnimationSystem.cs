@@ -1,3 +1,4 @@
+using _GAME_.Scripts.Character.Abstracs;
 using Character;
 
 public enum EnemyAnimationList

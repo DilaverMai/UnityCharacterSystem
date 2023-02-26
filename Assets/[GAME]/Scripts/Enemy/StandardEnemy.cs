@@ -2,6 +2,10 @@ using _GAME_.Scripts.Character;
 using _GAME_.Scripts.Character.Abstracs;
 using Character;
 using Sirenix.OdinInspector;
+using System.Collections;
+using _GAME_.Scripts.Character.Interfaces;
+using UnityEngine;
+
 namespace _GAME_.Scripts.Enemy
 {
     public class StandardEnemy : EnemyBase
@@ -13,7 +17,7 @@ namespace _GAME_.Scripts.Enemy
         [BoxGroup("Systems"),ReadOnly]
         public EnemyAnimationSystem AnimationSystemSystem;
         [BoxGroup("Systems"),ReadOnly]
-        public CharacterMoveWithNavMeshAndRoute MoveSystem;
+        public IMovable MoveSystem;
         [BoxGroup("Systems"),ReadOnly]
         public DamageableFinderWithLayer finderWithLayer;
         private IUpdater[] _updaters;
@@ -45,6 +49,7 @@ namespace _GAME_.Scripts.Enemy
         {
             Initialize();
             AllRunInitialize();
+            StartCoroutine(OnUpdater());
         }
 
         protected override void OnDeath()
@@ -52,22 +57,15 @@ namespace _GAME_.Scripts.Enemy
             CharacterState = CharacterStates.Die;
         }
 
-        private void Update()
+
+        IEnumerator OnUpdater()
         {
-            if(CharacterState == CharacterStates.Die) return;
-            //
-            // var find = finderWithLayer.FindTarget();
-            //
-            // if (find != null)
-            // {
-            //     MoveSystem.Move(finderWithLayer.GetTargetPosition());
-            //     if(MoveSystem.ReachedDestination())
-            //         AttackSystem.CheckForAttack(finderWithLayer.FindTarget(), finderWithLayer.TargetDistance);
-            // }
-            // else MoveSystem.RouteMover();
-            //
-            // foreach (var updater in _updaters)
-            //     updater.OnUpdate();
+            while (CharacterState != CharacterStates.Die)
+            {
+                yield return new WaitForFixedUpdate();
+                foreach (var updater in _updaters)
+                    updater.OnUpdate();
+            }
         }
         
     }

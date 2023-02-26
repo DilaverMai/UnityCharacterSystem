@@ -1,8 +1,12 @@
 using UnityEngine;
 
-public interface IFinder<out T>
+namespace _GAME_.Scripts.Character.Interfaces
 {
-    public T FindTarget();
-    public Vector3 GetTargetPosition();
-    public float TargetDistance { get; }
+    public interface IFinder<out T>
+    {
+        T FindTarget();
+        float GetTargetDistance();
+        float GetTargetAngle();
+        Vector3 GetTargetPosition();
+    }
 }

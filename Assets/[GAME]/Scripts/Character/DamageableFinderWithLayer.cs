@@ -1,42 +1,30 @@
-using _GAME_.Scripts.Character;
+using _GAME_.Scripts.Character.Interfaces;
 using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Character
+namespace _GAME_.Scripts.Character
 {
-    public class DamageableFinderWithLayer: MonoBehaviour, IFinder<IDamageable>
-    {
+    public class DamageableFinderWithLayer: MonoBehaviour,IUpdater, IFinder<IDamageable>
+    { 
+       [BoxGroup("Data")]
        public FinderData FinderData;
+       [BoxGroup("Data")]
        public FinderData AfterFindData;
        
-       [ShowInInspector, ReadOnly]
-       public FinderData CurrentData
-       {
-           get {
-               return Target != null ? AfterFindData : FinderData;
-           }
-       }
+       [ShowInInspector, ReadOnly, BoxGroup("Current Data")]
+       public FinderData CurrentData => Target != null ? AfterFindData : FinderData;
 
        [BoxGroup("Current Data"), ShowInInspector, ReadOnly]
-       public IDamageable Target;
+       private string _currentTargetName => Target == null ? "None" : Target.transform.name;
+       private IDamageable Target;
 
        [BoxGroup("Events")]
        public UnityEvent OnFindTarget;
        [BoxGroup("Events")]
        public UnityEvent OnLostTarget;
-       
-       public float TargetDistance
-        {
-            get
-            {
-                if(Target == null) return -1f;
-                
-                return Vector3.Distance(transform.position, Target.transform.position);
-            }
-        }
-        
+      
         public IDamageable FindTarget()
         {
             var results = Physics.OverlapSphere(transform.position, CurrentData.Radius,CurrentData.TargetMask);
@@ -62,7 +50,21 @@ namespace Character
             
             return Target = null;
         }
-    
+
+        public float GetTargetDistance()
+        {
+            if(Target == null) return -1f;
+                
+            return Vector3.Distance(transform.position, Target.transform.position);
+        }
+
+        public float GetTargetAngle()
+        {
+            if(Target == null) return -1f;
+                
+            return Vector3.Angle(transform.position, Target.transform.position);
+        }
+
         public Vector3 GetTargetPosition()
         {
             return Target.transform.position;
@@ -71,19 +73,28 @@ namespace Character
         private void OnDrawGizmos()
         {
             if(CurrentData == null) return;
-            
-            Handles.DrawWireDisc(transform.position, Vector3.up, CurrentData.Radius, 10f);
+
+            var position2 = transform.position;
+            Handles.DrawWireDisc(position2, Vector3.up, CurrentData.Radius, 10f);
             Handles.color = Color.blue;
 
-            Handles.DrawWireArc(transform.position, Vector3.up, transform.forward, CurrentData.Angle, CurrentData.Radius, 7.5f);
-            Handles.DrawWireArc(transform.position, Vector3.up, transform.forward, -CurrentData.Angle, CurrentData.Radius, 7.5f);
+            var forward = transform.forward;
+            Handles.DrawWireArc(position2, Vector3.up, forward, CurrentData.Angle, CurrentData.Radius, 7.5f);
+            Handles.DrawWireArc(position2, Vector3.up, forward, -CurrentData.Angle, CurrentData.Radius, 7.5f);
 
             if (Target != null)
             {
-                Handles.DrawLine(transform.position,Target.transform.position);
-                Handles.Label((Target.transform.position + transform.position) * .5f, Vector3.Distance(transform.position, Target.transform.position).ToString("F2"));
+                var position = Target.transform.position;
+                var position1 = transform.position;
+                Handles.DrawLine(position1,position);
+                Handles.Label((position + position1) * .5f, Vector3.Distance(position1, position).ToString("F2"));
             }
         
+        }
+
+        public void OnUpdate()
+        {
+            FindTarget();
         }
     }
 
