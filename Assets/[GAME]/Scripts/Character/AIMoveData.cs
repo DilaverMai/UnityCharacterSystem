@@ -1,12 +1,24 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace Character
+namespace _GAME_.Scripts.Character
 {
     [CreateAssetMenu(menuName = "AI/Create MoveData", fileName = "MoveData", order = 0)]
     public class AIMoveData: ScriptableObject
     {
-        public float Speed;
-        public float StoppingDistance;
-        public float RotationSpeed;
+        [FormerlySerializedAs("Speed")] public float speed;
+        [FormerlySerializedAs("StoppingDistance")] public float stoppingDistance;
+        [FormerlySerializedAs("RotationSpeed")] public float rotationSpeed;
+        public CharacterAIMoveState moveState;
+    }
+    
+    public enum CharacterAIMoveState
+    {
+        Idle,
+        Patrol,
+        Chase,
+        Attack,
+        Flee,
+        Dead
     }
 }

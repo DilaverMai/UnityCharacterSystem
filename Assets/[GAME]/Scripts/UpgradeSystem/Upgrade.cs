@@ -2,18 +2,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using UpgradeSystem;
 using Object = UnityEngine.Object;
 
-namespace UpgradeSystem
+namespace _GAME_.Scripts.UpgradeSystem
 {
     [Serializable]
     public class Upgrade
     {
         public string requirementTitle;
         public int upgradeLevel;
+        
         public List<RequirementList> requirementList = new List<RequirementList>();
+        
         [ReadOnly]
-        public List<Requirement> upgradeDatas = new List<Requirement>();
+        public List<RequirementList> upgradeDatas = new List<RequirementList>();
         public UpgradeEffect upgradeEffect;
         public void Initialized()
         {
@@ -22,15 +25,23 @@ namespace UpgradeSystem
             
             foreach (var requirement in requirementList)
             {
-                var data = new Requirement();
-                data.currentCount = 0;
-                data.requirementValue = requirement.requirementList[upgradeLevel].requirementValue;
-                data.requirementType = requirement.requirementList[upgradeLevel].requirementType;
-                upgradeDatas.Add(data);
+                foreach (var req in requirement.requirementList)
+                {
+                    foreach (var dataReq in req.requirementsLevels)
+                    {
+                        var list = new RequirementList();
+                        var data = new Requirement();
+                        
+                        data.currentCount = 0;
+                        data.requirementValue = dataReq.requirementValue;
+                        data.requirementType = dataReq.requirementType;
+                    }
+                }
+                
             }
         }
-        
-        public bool IsFinish()
+
+        private bool IsFinish()
         {
             return upgradeDatas.Count == 0;
         }
@@ -52,8 +63,8 @@ namespace UpgradeSystem
                 break;
             }
         }
-        
-        public bool NextLevel()
+
+        private bool NextLevel()
         {
             var check = upgradeLevel + 1;
             if(check == requirementList.Count)
@@ -67,8 +78,8 @@ namespace UpgradeSystem
         {
             return upgradeLevel == requirementList.Count;
         }
-        
-        public bool CurrentUpgradeIsUpgradeable()
+
+        private bool CurrentUpgradeIsUpgradeable()
         {
             return upgradeDatas[upgradeLevel].IsRequirementAvailable();
         }

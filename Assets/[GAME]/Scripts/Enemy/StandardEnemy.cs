@@ -28,7 +28,7 @@ namespace _GAME_.Scripts.Enemy
             HealthSystem = GetComponent<HealthSystem>();
             AttackSystem = GetComponent<Attacker<EnemyAnimationList>>();
             AnimationSystemSystem = GetComponent<EnemyAnimationSystem>();
-            MoveSystem = GetComponent<CharacterMoveWithNavMeshAndRoute>();
+            MoveSystem = GetComponent<IMovable>();
             
             HealthSystem.OnDeath.AddListener(OnDeath);
             HealthSystem.OnDeath.AddListener(() => AnimationSystemSystem.PlayAnimation(EnemyAnimationList.Death));
@@ -58,13 +58,16 @@ namespace _GAME_.Scripts.Enemy
         {
             CharacterState = CharacterStates.Die;
         }
-
-
         
         private IEnumerator OnUpdater()
         {
             while (CharacterState != CharacterStates.Die)
             {
+                foreach (var update in _updaters)
+                {
+                    update.OnUpdate();
+                }
+                
                 var findTarget = finderWithLayer.FindTarget();
                 if (findTarget != null)
                 {

@@ -1,26 +1,27 @@
-using System.Collections;
 using System.Collections.Generic;
+using _GAME_.Scripts.Character;
 using _GAME_.Scripts.Character.Interfaces;
+using Character;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-namespace Character
+namespace _GAME_.Scripts.Player
 {
     [RequireComponent((typeof(NavMeshAgent)))]
     [System.Serializable]
-    public class CharacterMoveWithNavMesh:MonoBehaviour, IInitializable, IMovable
+    public abstract class CharacterMoveWithNavMesh:MonoBehaviour,IUpdater, IInitializable, IMovable
     {
-
         [BoxGroup("Data")]
         public NavMeshAgent NavAgent;
         [BoxGroup("Event")]
-        public UnityEvent OnReachedDestination;
+        public UnityEvent onReachedDestination;
 
-        public List<AIMoveState> AIMoveState;
-        public AIMoveState CurrentAIMoveState;
+        public List<AIMoveData> aiMoveState;
+        [ShowInInspector,ReadOnly]
+        private AIMoveData _currentAIMoveState;
 
         private void Awake()
         {
@@ -29,9 +30,9 @@ namespace Character
 
         public void Initialize()
         {
-            NavAgent.speed = CurrentAIMoveState.aiMoveData.Speed;
-            NavAgent.stoppingDistance = CurrentAIMoveState.aiMoveData.StoppingDistance;
-            NavAgent.angularSpeed = CurrentAIMoveState.aiMoveData.RotationSpeed;
+            NavAgent.speed = _currentAIMoveState.speed;
+            NavAgent.stoppingDistance = _currentAIMoveState.stoppingDistance;
+            NavAgent.angularSpeed = _currentAIMoveState.rotationSpeed;
         }
 
         public virtual void Move(Vector3 position)
@@ -41,9 +42,10 @@ namespace Character
         
         public bool ReachedDestination()
         {
-            OnReachedDestination?.Invoke();
+            onReachedDestination?.Invoke();
             return NavAgent.remainingDistance <= NavAgent.stoppingDistance;
         }
+        
         public void JumpBack(Vector3 centerPoint)
         {
             NavAgent.enabled = false;
@@ -55,12 +57,9 @@ namespace Character
             NavAgent.isStopped = true;
         }
 
+        public void OnUpdate()
+        {
+            
+        }
     }
-
-    public class AIMoveState
-    {
-        [BoxGroup("Data")]
-        public AIMoveData aiMoveData;
-    }
-
 }

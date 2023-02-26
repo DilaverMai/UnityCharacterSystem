@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace UpgradeSystem
+namespace _GAME_.Scripts.UpgradeSystem
 {
     public class UpgradeManager : MonoBehaviour
     {

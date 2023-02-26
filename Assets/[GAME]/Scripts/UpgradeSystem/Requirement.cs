@@ -1,6 +1,4 @@
-using InventorySystem;
-
-namespace UpgradeSystem
+namespace _GAME_.Scripts.UpgradeSystem
 {
     [System.Serializable]
     public class Requirement

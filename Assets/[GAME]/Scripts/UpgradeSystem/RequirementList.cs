@@ -1,14 +1,22 @@
-using System;
 using System.Collections.Generic;
-using InventorySystem;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UpgradeSystem;
 
-namespace UpgradeSystem
+namespace _GAME_.Scripts.UpgradeSystem
 {
     [CreateAssetMenu(fileName = "New Requirement List", menuName = "Upgrade System/Requirement List", order = 0)]
     public class RequirementList: ScriptableObject
     {
-        public List<Requirement> requirementList = new List<Requirement>();
-      
+        [System.Serializable]
+        public class RequrimentLevels
+        {
+            public int requirementLevel;
+            public List<Requirement> requirementsLevels = new List<Requirement>();
+        }
+        
+        public List<RequrimentLevels> requirementList = new List<RequrimentLevels>();
     }
+
+    
 }
