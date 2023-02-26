@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="7ce054e3-31a6-4b58-9a92-76cf86ebf223" name="Changes" comment="" />
+=======
+    <list default="true" id="7ce054e3-31a6-4b58-9a92-76cf86ebf223" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/AfterFinderData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/AfterFinderData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/FinderData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/FinderData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/PlayerStateAttackData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/PlayerStateAttackData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/Resources/AttackSystemData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/Resources/AttackSystemData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/StatData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/StatData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/State EnemyStateAttackData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Data/State EnemyStateAttackData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/BladonEditorPanel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/BladonEditorPanel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/AttackSystemData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/AttackSystemData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityCharacterSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityCharacterSystem/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Datas.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Datas/PlayerStateAttackData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Datas/PlayerStateAttackData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Datas/StatData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Datas/StatData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Datas/State EnemyStateAttackData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Datas/State EnemyStateAttackData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Scenes/Test - Attacker.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[GAME]/Scenes/Test - Attacker.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Attacker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Attacker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/DamageableFinderWithLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/DamageableFinderWithLayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/AttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/SwordAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Datas/SwordAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/HealthSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/HealthSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Interfaces/IDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Character/Interfaces/IDamageable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Enemy/StandardEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[GAME]/Scripts/Enemy/StandardEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +75,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
@@ -41,15 +85,26 @@
     "WebServerToolWindowFactoryState": "false",
     "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> Stashed changes
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\dilav\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\dilav\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\dilav\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\dilav\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\dilav\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\dilav\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.17f1/Unity.app/Contents/MacOS/Unity" />
@@ -107,7 +162,8 @@
       <workItem from="1677329333187" duration="46000" />
       <workItem from="1677329547430" duration="112000" />
       <workItem from="1677329670010" duration="1641000" />
-      <workItem from="1677331342860" duration="19206000" />
+      <workItem from="1677331342860" duration="19414000" />
+      <workItem from="1677403405244" duration="4367000" />
     </task>
     <servers />
   </component>

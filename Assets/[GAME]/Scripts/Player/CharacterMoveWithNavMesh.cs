@@ -1,9 +1,11 @@
 using System.Collections;
+using System.Collections.Generic;
 using _GAME_.Scripts.Character.Interfaces;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Character
 {
@@ -11,12 +13,14 @@ namespace Character
     [System.Serializable]
     public class CharacterMoveWithNavMesh:MonoBehaviour, IInitializable, IMovable
     {
-        [BoxGroup("Data")]
-        public MoveData MoveData;
+
         [BoxGroup("Data")]
         public NavMeshAgent NavAgent;
         [BoxGroup("Event")]
         public UnityEvent OnReachedDestination;
+
+        public List<AIMoveState> AIMoveState;
+        public AIMoveState CurrentAIMoveState;
 
         private void Awake()
         {
@@ -25,9 +29,9 @@ namespace Character
 
         public void Initialize()
         {
-            NavAgent.speed = MoveData.Speed;
-            NavAgent.stoppingDistance = MoveData.StoppingDistance;
-            NavAgent.angularSpeed = MoveData.RotationSpeed;
+            NavAgent.speed = CurrentAIMoveState.aiMoveData.Speed;
+            NavAgent.stoppingDistance = CurrentAIMoveState.aiMoveData.StoppingDistance;
+            NavAgent.angularSpeed = CurrentAIMoveState.aiMoveData.RotationSpeed;
         }
 
         public virtual void Move(Vector3 position)
@@ -52,5 +56,11 @@ namespace Character
         }
 
     }
-    
+
+    public class AIMoveState
+    {
+        [BoxGroup("Data")]
+        public AIMoveData aiMoveData;
+    }
+
 }

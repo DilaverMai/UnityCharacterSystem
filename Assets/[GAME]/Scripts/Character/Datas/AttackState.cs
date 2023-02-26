@@ -28,26 +28,25 @@ namespace _GAME_.Scripts.Character.Data
 		}
 
 		[ShowInInspector, ReadOnly, BoxGroup("Attack Debug")]
-		private bool _isAttacking => _attackCoroutine != null;
-		[ShowInInspector, ReadOnly, BoxGroup("Attack Debug")]
-		private Coroutine _attackCoroutine;
+		private bool _isAttacking;
 		
-		public virtual IEnumerator Attack(IDamageable healthDamageable)
+		public virtual IEnumerator AttackCoroutine(IDamageable healthDamageable)
 		{
+			_isAttacking = true;
 			yield return new WaitForSeconds(StateAttackData.AttackDelay);
 			Attack(ref healthDamageable);
 			healthDamageable.TakeDamage(ref healthDamageable, StateAttackData.Damage, ref characterType);
 			yield return new WaitForSeconds(StateAttackData.AttackLoadTime);
+			_isAttacking = false;
 		}
-
-		protected abstract void Attack(ref IDamageable healthDamageable);
 		
-		public bool CanAttack(ref Vector3 targetDistance)
-		{
-			return CanHit(ref targetDistance) & !_isAttacking;
-		}
-
+		protected abstract void Attack(ref IDamageable healthDamageable);
 		protected abstract bool CanHit(ref Vector3 target);
+		
+		public bool CanAttack(ref Vector3 targetDistance, CharacterTypes targetType)
+		{
+			return CanHit(ref targetDistance) & !_isAttacking & characterType.CanAttack(targetType);
+		}
 		
 		protected virtual float GetDistance(ref Vector3 targetDistance)
 		{
@@ -56,7 +55,7 @@ namespace _GAME_.Scripts.Character.Data
 
 		protected virtual float GetAngle(ref Vector3 targetDistance)
 		{
-			return Vector3.Angle(thisTransform.position, targetDistance);
+			return Vector3.Angle(thisTransform.forward, targetDistance);
 		}
 
 		protected virtual float YOffset(ref float targetYPos)

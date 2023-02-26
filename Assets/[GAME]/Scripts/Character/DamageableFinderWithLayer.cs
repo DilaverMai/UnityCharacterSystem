@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+using _GAME_.Scripts.Character;
+>>>>>>> Stashed changes
 using _GAME_.Scripts.Character.Interfaces;
 using Sirenix.OdinInspector;
 using UnityEditor;
@@ -7,8 +11,12 @@ using UnityEngine.Events;
 namespace _GAME_.Scripts.Character
 {
     public class DamageableFinderWithLayer: MonoBehaviour,IUpdater, IFinder<IDamageable>
+<<<<<<< Updated upstream
     { 
        [BoxGroup("Data")]
+=======
+    {
+>>>>>>> Stashed changes
        public FinderData FinderData;
        [BoxGroup("Data")]
        public FinderData AfterFindData;
@@ -27,22 +35,29 @@ namespace _GAME_.Scripts.Character
       
         public IDamageable FindTarget()
         {
+            BladonEditorPanel.AddLog("Finding Target");
             var results = Physics.OverlapSphere(transform.position, CurrentData.Radius,CurrentData.TargetMask);
             
             if (results.Length == 0) return Target = null;
             
             foreach (var col in results)
             {
-                var direction = (col.transform.position - transform.position).normalized;
-                var angle = Vector3.Angle(transform.forward, direction);
+                var thisTransform = transform;
+                
+                var direction  = (col.transform.position - thisTransform.position).normalized;
+                var angle      = Vector3.Angle(thisTransform.forward, direction);
 
                 if (!(angle <= CurrentData.Angle))
                     continue;
 
                 if(Target == null)
                     OnFindTarget?.Invoke();
+                
+                var damageable = col.GetComponent<IDamageable>();
+                
+                if(damageable.Health <= 0) continue;
             
-                return Target = col.GetComponent<IDamageable>();
+                return Target = damageable;
             }
             
             if(Target != null)
@@ -91,7 +106,10 @@ namespace _GAME_.Scripts.Character
             }
         
         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         public void OnUpdate()
         {
             FindTarget();

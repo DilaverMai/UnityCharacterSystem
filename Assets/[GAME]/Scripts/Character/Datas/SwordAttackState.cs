@@ -12,7 +12,8 @@ namespace _GAME_.Scripts.Character.Datas
 		protected override void Attack(ref IDamageable healthDamageable)
 		{
 			animationSystem.PlayAnimation(AttackAnimation);
-			if(StateAttackData.StopWhenAttacking)movable.Stop();
+			if(StateAttackData.StopWhenAttacking)
+				movable.Stop();
 		}
 		protected override bool CanHit(ref Vector3 target)
 		{

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061921b0c6dc4444b01ef126d603defb, type: 3}
   m_Name: State EnemyStateAttackData
   m_EditorClassIdentifier: 
-  Damage: 0
+  Damage: 1
   StopWhenAttacking: 0
   AttackStateType: 1
   AttackAnim: 3
-  AttackLoadTime: 0
-  AttackDelay: 0
-  AttackRange: 0
-  AttackAngle: 0
+  AttackLoadTime: 1
+  AttackDelay: 0.15
+  AttackRange: 6
+  AttackAngle: 40

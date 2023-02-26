@@ -55,8 +55,8 @@ namespace _GAME_.Scripts.Character
 		
 		public virtual void CheckForAttack(IDamageable damageable, Vector3 targetDistance)
 		{
-			if (currentState.CanAttack(ref targetDistance))
-				StartCoroutine(currentState.Attack(damageable));
+			if (currentState.CanAttack(ref targetDistance,damageable.CharacterType))
+				 StartCoroutine(currentState.AttackCoroutine(damageable));
 		}
 
 		public virtual void ChangeState(AttackState<T> state)

@@ -1,6 +1,9 @@
 using _GAME_.Scripts.Character.Abstracs;
 using _GAME_.Scripts.Character.Interfaces;
+<<<<<<< Updated upstream
 using Character;
+=======
+>>>>>>> Stashed changes
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,7 +26,7 @@ namespace _GAME_.Scripts.Character
         public int CurrentHealth;
         
         [BoxGroup("Current Datas"),ReadOnly]
-        public CharacterTypes CharacterType;
+        public CharacterTypes CharacterType { get; set; }
         
         public bool isDead => CurrentHealth <= 0;
         
@@ -42,6 +45,13 @@ namespace _GAME_.Scripts.Character
             else
                 OnHit?.Invoke();
         }
+        public int Health
+        {
+            get {
+                return CurrentHealth;
+            }
+        }
+        
 
         public void Initialize()
         {

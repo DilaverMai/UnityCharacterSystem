@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace Character
 {
-    [CreateAssetMenu(menuName = "Create MoveData", fileName = "MoveData", order = 0)]
-    public class MoveData: ScriptableObject
+    [CreateAssetMenu(menuName = "AI/Create MoveData", fileName = "MoveData", order = 0)]
+    public class AIMoveData: ScriptableObject
     {
         public float Speed;
         public float StoppingDistance;
