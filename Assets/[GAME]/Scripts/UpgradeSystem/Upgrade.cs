@@ -1,43 +1,48 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.Events;
-using static _GAME_.Scripts.UpgradeSystem.RequirementsForUpgradeData;
+using Object = UnityEngine.Object;
+
 
 namespace _GAME_.Scripts.UpgradeSystem
 {
 	[System.Serializable]
 	public class Upgrade
 	{
+		
 		public string Name;
 		public int UpgradeID;
 		
 		public int CurrentLevel;
 		public int MaxLevel;
 	
-		public RequirementLevelArray[] RequirementsForUpgrade;
+		public List<RequirementLevelArray> RequirementsForUpgrade;
 		
 		public UnityEvent<int> UpgradeEffect;
 
 		public Upgrade(RequirementsForUpgradeData data)
 		{
 			if (data == null) return;
-			
-			Name = data.Name;
-			UpgradeID = data.UpgradeID;
-			
-			MaxLevel = data.RequirementsForUpgrade.Length;
-			RequirementsForUpgrade = data.RequirementsForUpgrade;
+
+			var duplicate = Object.Instantiate(data);
+			Name = duplicate.Name;
+			UpgradeID = duplicate.UpgradeID;
+			MaxLevel = duplicate.RequirementsForUpgrade.Count;
+			RequirementsForUpgrade = duplicate.RequirementsForUpgrade;
 		}
 		
 		public bool NextLevel()
 		{
-			MaxLevel = RequirementsForUpgrade.Length;
+			MaxLevel = RequirementsForUpgrade.Count;
 			CurrentLevel++;
-			return CurrentLevel <= MaxLevel;
+			return CurrentLevel >= MaxLevel;
 		}
 		
 		public bool IsEmpty()
 		{
-			return RequirementsForUpgrade.Length == 0;
+			return RequirementsForUpgrade.Count == 0;
 		}
 		
 		public RequirementLevelArray GetRequirementsForUpgrade(int level)
@@ -57,17 +62,19 @@ namespace _GAME_.Scripts.UpgradeSystem
 			
 			foreach (var upgradeItem in currentRequirements.RequirementsForUpgrade)
 			{
-				if (upgradeItem.ItemName == itemName)
+				if (upgradeItem.ItemName != itemName) continue;
+				
+				if (upgradeItem.AddItem(amount)) //true bitmiş demektir
 				{
-					if (upgradeItem.AddItem(amount))
-					{
-						Debug.Log("Requirement met");
-						//currentRequirements.RequirementsForUpgrade.Remove(upgradeItem);
-						return true;
-					}
+					Debug.Log("Finish Requirement");
+					return true;
 				}
+				
+				Debug.Log("Added Item");
+				return true;
 			}
 
+			Debug.Log("Not Found");
 			return false;
 		}
 	}

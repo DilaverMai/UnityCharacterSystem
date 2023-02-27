@@ -17,6 +17,6 @@ MonoBehaviour:
   AttackStateType: 1
   AttackAnim: 3
   AttackLoadTime: 1
-  AttackDelay: 0.15
+  AttackDelay: 0.3
   AttackRange: 6
-  AttackAngle: 40
+  AttackAngle: 92.5

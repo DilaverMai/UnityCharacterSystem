@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -494,8 +494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf927e97426847688c5a05aed834905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joyStickCar: {fileID: 11400000, guid: 0708c203f392146218aa51b173653830, type: 2}
-  sitPoint: {fileID: 0}
 --- !u!65 &341640984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -881,9 +879,6 @@ MonoBehaviour:
     SerializationNodes: []
   StateAttackDatas:
   - {fileID: 11400000, guid: 0228c12195608384d9679b330a4e424e, type: 2}
-  attackEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &577812782
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -991,28 +986,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ddd91f3f4e14145a13004587ae580d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeList:
-  - requirementTitle: Test
-    upgradeLevel: 0
-    requirementList:
-    - {fileID: 11400000, guid: 0db2fb0c08864468e8bf988be64251a3, type: 2}
-    upgradeDatas: []
-    upgradeEffect:
-      OnUpgrade:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 0}
-            m_TargetAssemblyTypeName: Test, Assembly-CSharp
-            m_MethodName: TestMethod
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+  RequirementsForUpgradeData:
+  - {fileID: 11400000, guid: 64df6e106f4860b4481966c1f66e6e38, type: 2}
+  Upgrades: []
 --- !u!4 &758422391
 Transform:
   m_ObjectHideFlags: 0
@@ -2164,6 +2140,7 @@ GameObject:
   - component: {fileID: 1905487161}
   - component: {fileID: 1905487160}
   - component: {fileID: 1905487159}
+  - component: {fileID: 1905487167}
   m_Layer: 7
   m_Name: StateEnemy
   m_TagString: Untagged
@@ -2183,44 +2160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02a54a8de64423bbca8bcdc39f4cb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: []
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: States
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Character.State,
-        Assembly-CSharp]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
-        mscorlib]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  attackStates: []
-  _currentState:
-    name: 
-    attackerData: {fileID: 0}
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  CurrentState: {attackerData: {fileID: 0}, usingSkillData: {fileID: 0}}
 --- !u!195 &1905487160
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2255,13 +2194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e850ca6e1fde41c0b53dec15b66c950e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 10
-  Angle: 45
-  TargetMask:
-    serializedVersion: 2
-    m_Bits: 64
-  AfterFindAngle: 55.65
-  AfterFindRadius: 10
+  FinderData: {fileID: 0}
+  AfterFindData: {fileID: 0}
   OnFindTarget:
     m_PersistentCalls:
       m_Calls: []
@@ -2280,22 +2214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67175b5de3794b90a19e726c329080a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveData: {fileID: 11400000, guid: 79ae1dd9d08be304794a2375d8523586, type: 2}
-  NavAgent: {fileID: 1905487160}
-  OnReachedDestination:
-    m_PersistentCalls:
-      m_Calls: []
-  WayPoints:
-    WayPoints:
-    - Position: {x: 0, y: 0, z: 20}
-    - Position: {x: 10, y: 0, z: 10}
-    - Position: {x: 0, y: 0, z: 0}
-    WayPointIndex: 0
-    CurrentWayPoint:
-      Position: {x: 0, y: 0, z: 0}
-  OnNextWayPoint:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1905487163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2333,7 +2251,6 @@ MonoBehaviour:
       m_Calls: []
   MaxHealth: 100
   CurrentHealth: 0
-  CharacterType: 0
 --- !u!114 &1905487165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2352,7 +2269,6 @@ MonoBehaviour:
   HealthSystem: {fileID: 0}
   AttackSystem: {fileID: 0}
   AnimationSystemSystem: {fileID: 0}
-  MoveSystem: {fileID: 0}
   finderWithLayer: {fileID: 0}
 --- !u!4 &1905487166
 Transform:
@@ -2370,6 +2286,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1905487167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905487158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2ec8afae244c94b5ac8c44b09d26ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  StateAttackDatas:
+  - {fileID: 11400000, guid: 32137acfac7915348b62dd691717f4e6, type: 2}
 --- !u!1 &2041589297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,13 +2479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e850ca6e1fde41c0b53dec15b66c950e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 10
-  Angle: 45
-  TargetMask:
-    serializedVersion: 2
-    m_Bits: 64
-  AfterFindAngle: 55.65
-  AfterFindRadius: 10
+  FinderData: {fileID: 0}
+  AfterFindData: {fileID: 0}
   OnFindTarget:
     m_PersistentCalls:
       m_Calls: []
@@ -2565,22 +2499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67175b5de3794b90a19e726c329080a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveData: {fileID: 11400000, guid: 79ae1dd9d08be304794a2375d8523586, type: 2}
-  NavAgent: {fileID: 2073971557}
-  OnReachedDestination:
-    m_PersistentCalls:
-      m_Calls: []
-  WayPoints:
-    WayPoints:
-    - Position: {x: 0, y: 0, z: 20}
-    - Position: {x: 10, y: 0, z: 10}
-    - Position: {x: 0, y: 0, z: 0}
-    WayPointIndex: 0
-    CurrentWayPoint:
-      Position: {x: 0, y: 0, z: 0}
-  OnNextWayPoint:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2073971560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2618,7 +2536,6 @@ MonoBehaviour:
       m_Calls: []
   MaxHealth: 100
   CurrentHealth: 0
-  CharacterType: 0
 --- !u!114 &2073971563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2637,7 +2554,6 @@ MonoBehaviour:
   HealthSystem: {fileID: 0}
   AttackSystem: {fileID: 0}
   AnimationSystemSystem: {fileID: 0}
-  MoveSystem: {fileID: 0}
   finderWithLayer: {fileID: 0}
 --- !u!114 &2073971564
 MonoBehaviour:
@@ -2661,9 +2577,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   StateAttackDatas: []
-  attackEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &8809982681376071373
 PrefabInstance:
   m_ObjectHideFlags: 0

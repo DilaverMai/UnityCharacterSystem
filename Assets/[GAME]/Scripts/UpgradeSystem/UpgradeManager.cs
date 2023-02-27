@@ -58,25 +58,23 @@ namespace _GAME_.Scripts.UpgradeSystem
 		
 		#region Data
 		
-		public void AddCountToUpgrade(Upgrade upgrade,ItemsItemNames itemName,int count = 1)
+		public void AddCountToUpgrade(Upgrade upgradeData,ItemsItemNames itemName,int count = 1)
 		{
-			if (upgrade == null) return;
+			if (upgradeData.IsEmpty()) return;
+			if (upgradeData.AddItem(itemName, count)) return;
+			if (!upgradeData.NextLevel()) return;
 
-			if (!upgrade.AddItem(itemName, count)) return;
-			if (upgrade.NextLevel()) return;
-			
 			Debug.Log("Upgrade complete");
-			Upgrades.Remove(upgrade);
+			Upgrades.Remove(upgradeData);
 		}
 		
 		public void AddCountToUpgradeByID(int upgrade,ItemsItemNames itemName,int count = 1)
 		{
 			var upgradeData = GetUpgradeWithID(upgrade);
 			
-			if (upgradeData == null) return;
-		
-			if (!upgradeData.AddItem(itemName, count)) return;
-			if (upgradeData.NextLevel()) return;
+			if (upgradeData.IsEmpty()) return;
+			if (upgradeData.AddItem(itemName, count)) return;
+			if (!upgradeData.NextLevel()) return;
 			
 			Debug.Log("Upgrade complete");
 			Upgrades.Remove(upgradeData);
@@ -86,11 +84,9 @@ namespace _GAME_.Scripts.UpgradeSystem
 		{
 			var upgradeData = GetUpgradeWithName(upgrade);
 			
-			if (upgradeData == null) return;
-		
-			if (!upgradeData.AddItem(itemName, count)) return;
-			if (upgradeData.NextLevel()) return;
-			if (!upgradeData.IsEmpty()) return;
+			if (upgradeData.IsEmpty()) return;
+			if (upgradeData.AddItem(itemName, count)) return;
+			if (!upgradeData.NextLevel()) return;
 			
 			Debug.Log("Upgrade complete");
 			Upgrades.Remove(upgradeData);

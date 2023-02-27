@@ -12,9 +12,26 @@ public class UpgradeTrigger : MonoBehaviour
    {
       var upgradeManager = FindObjectOfType<UpgradeManager>();
       var upgrade = upgradeManager.GetUpgradeWithID(UpgradeID);
-      upgradeManager.AddCountToUpgrade(upgrade,ItemName,1);
+      
+      upgradeManager.AddCountToUpgradeByID(0,ItemName);
    }
    
+   UpgradeManager upgradeManager;
+
+   private void Sub()
+   {
+      upgradeManager.GetUpgradeWithName("EvLevel").UpgradeEffect.AddListener(LevelUpdates);
+   }
+
+   private void LevelUpdates(int arg0)
+   {
+      switch (arg0)
+      {
+         case 1:
+            break;
+      }
+   }
+
    [Button]
    public void LogLevel(int lvl)
    {

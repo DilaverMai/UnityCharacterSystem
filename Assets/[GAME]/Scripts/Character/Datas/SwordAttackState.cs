@@ -1,7 +1,6 @@
 ﻿using System;
 using _GAME_.Scripts.Character.Data;
 using _GAME_.Scripts.Character.Interfaces;
-using Character;
 using UnityEngine;
 
 namespace _GAME_.Scripts.Character.Datas
