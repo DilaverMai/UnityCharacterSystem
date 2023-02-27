@@ -8,10 +8,9 @@ using Object = UnityEngine.Object;
 
 namespace _GAME_.Scripts.UpgradeSystem
 {
-	[System.Serializable]
+	[Serializable]
 	public class Upgrade
 	{
-		
 		public string Name;
 		public int UpgradeID;
 		
@@ -19,7 +18,6 @@ namespace _GAME_.Scripts.UpgradeSystem
 		public int MaxLevel;
 	
 		public List<RequirementLevelArray> RequirementsForUpgrade;
-		
 		public UnityEvent<int> UpgradeEffect;
 
 		public Upgrade(RequirementsForUpgradeData data)
@@ -33,10 +31,28 @@ namespace _GAME_.Scripts.UpgradeSystem
 			RequirementsForUpgrade = duplicate.RequirementsForUpgrade;
 		}
 		
+		public bool AllRequirementsMetCurrent()
+		{
+			var currentRequirements = GetRequirementsForUpgrade(CurrentLevel);
+			
+			if (currentRequirements == null) 
+				return false;
+			
+			foreach (var upgradeItem in currentRequirements.RequirementsForUpgrade)
+			{
+				if (!upgradeItem.IsRequirementMet()) 
+					return false;
+			}
+
+			return true;
+		}
+		
 		public bool NextLevel()
 		{
-			MaxLevel = RequirementsForUpgrade.Count;
-			CurrentLevel++;
+			Debug.Log(AllRequirementsMetCurrent());
+			if (AllRequirementsMetCurrent())
+				CurrentLevel++;
+			
 			return CurrentLevel >= MaxLevel;
 		}
 		
@@ -67,7 +83,7 @@ namespace _GAME_.Scripts.UpgradeSystem
 				if (upgradeItem.AddItem(amount)) //true bitmiş demektir
 				{
 					Debug.Log("Finish Requirement");
-					return true;
+					return false;
 				}
 				
 				Debug.Log("Added Item");
@@ -75,7 +91,7 @@ namespace _GAME_.Scripts.UpgradeSystem
 			}
 
 			Debug.Log("Not Found");
-			return false;
+			return true;
 		}
 	}
 }

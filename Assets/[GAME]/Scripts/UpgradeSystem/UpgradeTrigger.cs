@@ -11,9 +11,7 @@ public class UpgradeTrigger : MonoBehaviour
    public void Triger()
    {
       var upgradeManager = FindObjectOfType<UpgradeManager>();
-      var upgrade = upgradeManager.GetUpgradeWithID(UpgradeID);
-      
-      upgradeManager.AddCountToUpgradeByID(0,ItemName);
+      upgradeManager.AddCountToUpgrade(0,ItemName);
    }
    
    UpgradeManager upgradeManager;

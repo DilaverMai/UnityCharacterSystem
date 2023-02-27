@@ -23,3 +23,8 @@ MonoBehaviour:
     - ItemName: 2
       RequiredAmount: 3
       CurrentAmount: 0
+  - Level: 1
+    RequirementsForUpgrade:
+    - ItemName: 1
+      RequiredAmount: 2
+      CurrentAmount: 0
