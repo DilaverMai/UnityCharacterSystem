@@ -9,7 +9,7 @@ namespace _GAME_.Scripts.Player
     [Serializable]
     public abstract class AIMoveStateWithNav: IMovable
     {
-        protected readonly NavMeshAgent navMeshAgent;
+        protected NavMeshAgent NavAgent;
         private Vector3 spawnPoint;
         
         public float speed;
@@ -27,7 +27,7 @@ namespace _GAME_.Scripts.Player
         
         public bool ReachedDestination()
         {
-            return navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance;
+            return NavAgent.remainingDistance <= NavAgent.stoppingDistance;
         }
 
         public void JumpBack(Vector3 centerPoint)
@@ -37,7 +37,7 @@ namespace _GAME_.Scripts.Player
 
         public virtual void Stop()
         {
-            navMeshAgent.isStopped = true;
+            NavAgent.isStopped = true;
         }
     }
 }

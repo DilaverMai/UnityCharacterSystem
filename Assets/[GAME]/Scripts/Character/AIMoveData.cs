@@ -14,9 +14,12 @@ namespace _GAME_.Scripts.Character
         [ShowIf("moveState", CharacterAIMoveState.Patrol)]
         public Vector3[] routes;
         
+        [ShowIf("moveState", CharacterAIMoveState.Prowl)]
+        public RouteData[] ChaseRoutes;
+        
         public CharacterAIMoveState moveState;
     }
-    
+
     public enum CharacterAIMoveState
     {
         Idle,
@@ -24,6 +27,7 @@ namespace _GAME_.Scripts.Character
         Chase,
         Attack,
         Flee,
-        Dead
+        Dead,
+        Prowl
     }
 }

@@ -44,7 +44,7 @@ namespace _GAME_.Scripts.Player
             if (ReachedDestination())
                 return;
             
-            navMeshAgent.SetDestination(GetCurrentRoutePoint());
+            NavAgent.SetDestination(GetCurrentRoutePoint());
         }
 
         public bool ReachedDestination()

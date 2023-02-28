@@ -50,6 +50,10 @@ namespace _GAME_.Scripts.Player
                         break;
                     case CharacterAIMoveState.Dead:
                         break;
+                    case CharacterAIMoveState.Prowl:
+                        var Prowl = new AIProwl(state);
+
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -58,10 +62,5 @@ namespace _GAME_.Scripts.Player
             currentAIMoveStateWithNav = _aiMoveStates[0];
         }
         
-        
-        private void Update()
-        {
-            
-        }
     }
 }

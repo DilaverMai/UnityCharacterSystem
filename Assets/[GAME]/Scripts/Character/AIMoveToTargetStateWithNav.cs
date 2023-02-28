@@ -11,6 +11,6 @@ public class AIMoveToTargetStateWithNav : AIMoveStateWithNav
 
     public override void Move(Vector3 targetPosition = default)
     {
-        navMeshAgent.SetDestination(targetPosition);
+        NavAgent.SetDestination(targetPosition);
     }
 }
