@@ -14,7 +14,7 @@ namespace _GAME_.Scripts.UpgradeSystem
 		public string Name;
 		public int UpgradeID;
 		
-		public int CurrentLevel;
+		public int UpgradeCurrentLevel;
 		public int MaxLevel;
 	
 		public List<RequirementLevelArray> RequirementsForUpgrade;
@@ -31,67 +31,82 @@ namespace _GAME_.Scripts.UpgradeSystem
 			RequirementsForUpgrade = duplicate.RequirementsForUpgrade;
 		}
 		
-		public bool AllRequirementsMetCurrent()
+		public UpgradeState AddItem(ItemsItemNames itemName,int amount)
 		{
-			var currentRequirements = GetRequirementsForUpgrade(CurrentLevel);
+			var currentRequirements = GetCurrentRequirementsForUpgrade();
+			if (currentRequirements == null) 
+				return UpgradeState.NotFound;
+			
+			foreach (var upgradeItem in currentRequirements.RequirementsForUpgrade)
+			{
+				switch (upgradeItem.IsRequirementMet(ref itemName, amount))
+				{
+					case RequirementLevel.RequirementType.Necessary:
+						return UpgradeState.AddedItem;
+					
+					case RequirementLevel.RequirementType.NotNecessary:
+						if(currentRequirements.RequirementsForUpgrade.Last() == upgradeItem)
+							return UpgradeState.WrongItem;
+						break;
+					
+					case RequirementLevel.RequirementType.FinishRequirement:
+						if (AllRequirementsFinish())
+							return UpgradeState.FinishUpgrade;
+						return UpgradeState.FinishLevel;
+					default:
+						return UpgradeState.NotFound;
+				}
+			}
+
+			Debug.Log("Not Found");
+			return UpgradeState.NotFound;
+		}
+		
+		private bool AllRequirementsFinish() //Upgrade Bitti mi
+		{
+			var currentRequirements = GetRequirementsForUpgrade(UpgradeCurrentLevel);
 			
 			if (currentRequirements == null) 
 				return false;
 			
 			foreach (var upgradeItem in currentRequirements.RequirementsForUpgrade)
 			{
-				if (!upgradeItem.IsRequirementMet()) 
+				if (!upgradeItem.IsFinish) 
 					return false;
 			}
-
-			return true;
-		}
-		
-		public bool NextLevel()
-		{
-			Debug.Log(AllRequirementsMetCurrent());
-			if (AllRequirementsMetCurrent())
-				CurrentLevel++;
 			
-			return CurrentLevel >= MaxLevel;
+			UpgradeEffect.Invoke(UpgradeCurrentLevel);
+			UpgradeCurrentLevel++;
+
+			if (UpgradeCurrentLevel >= MaxLevel)
+				return true;
+			
+			return false;
 		}
-		
+
 		public bool IsEmpty()
 		{
 			return RequirementsForUpgrade.Count == 0;
 		}
 		
-		public RequirementLevelArray GetRequirementsForUpgrade(int level)
+		public RequirementLevelArray GetCurrentRequirementsForUpgrade()
+		{
+			return GetRequirementsForUpgrade(UpgradeCurrentLevel);
+		}
+		
+		private RequirementLevelArray GetRequirementsForUpgrade(int level)
 		{
 			return RequirementsForUpgrade[level];
 		}
 		
-		public RequirementLevelArray GetCurrentRequirementsForUpgrade()
-		{
-			return GetRequirementsForUpgrade(CurrentLevel);
-		}
-		
-		public bool AddItem(ItemsItemNames itemName,int amount)
-		{
-			var currentRequirements = GetCurrentRequirementsForUpgrade();
-			if (currentRequirements == null) return false;
-			
-			foreach (var upgradeItem in currentRequirements.RequirementsForUpgrade)
-			{
-				if (upgradeItem.ItemName != itemName) continue;
-				
-				if (upgradeItem.AddItem(amount)) //true bitmiş demektir
-				{
-					Debug.Log("Finish Requirement");
-					return false;
-				}
-				
-				Debug.Log("Added Item");
-				return true;
-			}
+	}
 
-			Debug.Log("Not Found");
-			return true;
-		}
+	public enum UpgradeState
+	{
+		FinishLevel,
+		FinishUpgrade,
+		AddedItem,
+		NotFound,
+		WrongItem
 	}
 }

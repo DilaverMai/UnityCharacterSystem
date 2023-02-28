@@ -1,16 +1,13 @@
+using InventorySystem;
+using InventorySystem.Items;
+
 namespace Stats
 {
-    public class Stat
+    public class Stat: Item
     {
-        public string StatName;
-        public int Value;
-        public int MaxValue;
-        
-        public Stat(StatData data)
+        public Stat(ItemData data) : base(data)
         {
-            StatName = data.StatName;
-            Value = data.Value;
-            MaxValue = data.MaxValue;
+            
         }
     }
 }

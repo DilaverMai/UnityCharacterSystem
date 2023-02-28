@@ -1,7 +1,5 @@
 using System;
 using _GAME_.Scripts.Character;
-using Character;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _GAME_.Scripts.Player
@@ -9,13 +7,19 @@ namespace _GAME_.Scripts.Player
     [Serializable]
     public abstract class AIMoveState
     {
-        [BoxGroup("Data")]
-        public AIMoveData aiMoveData;
         private Vector3 spawnPoint;
         
-        public virtual void OnGizmos()
+        public float speed;
+        public float stoppingDistance;
+        public float rotationSpeed;
+
+        protected AIMoveState(AIMoveData aiMoveData)
         {
-            
+            speed = aiMoveData.speed;
+            stoppingDistance = aiMoveData.stoppingDistance;
+            rotationSpeed = aiMoveData.rotationSpeed;
         }
+
+        public abstract Vector3 GetTargetPosition();
     }
 }

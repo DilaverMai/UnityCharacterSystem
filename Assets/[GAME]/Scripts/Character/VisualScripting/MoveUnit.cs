@@ -18,7 +18,7 @@ public class MoveUnit<T> : Unit where T: IMovable
     }
     private ControlOutput MoveTrigger(Flow arg)
     {
-        moveable.Move(arg.GetValue<Vector3>(MoveDirectionInput));
+        //moveable.Move(arg.GetValue<Vector3>(MoveDirectionInput));
         return null;
     }
 

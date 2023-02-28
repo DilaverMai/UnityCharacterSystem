@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using _GAME_.Scripts.Character.Abstracs;
-using _GAME_.Scripts.Character.Datas;
+using _GAME_.Scripts.Character.Data;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace _GAME_.Scripts.Character.Datas
+namespace _GAME_.Scripts.Character.Data
 {
-	[CreateAssetMenu(menuName = "Create AttackSystemData", fileName = "AttackSystemData", order = 0)]
+	[CreateAssetMenu(menuName = "Attack System/Create AttackSystemData", fileName = "AttackSystemData", order = 0)]
 	public class AttackSystemData: SerializedScriptableObject
 	{
 		[Serializable]

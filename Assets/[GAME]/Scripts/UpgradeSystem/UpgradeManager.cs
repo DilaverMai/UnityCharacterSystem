@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,67 +37,75 @@ namespace _GAME_.Scripts.UpgradeSystem
 		
 		#region Level
 		
-		public bool UpgradeLevel(Upgrade upgrade,int count = 1)
-		{
-			if (upgrade == null) return false;
-			if (upgrade.CurrentLevel >= upgrade.MaxLevel) return false;
-			if(upgrade.CurrentLevel + count > upgrade.MaxLevel) return false;
-			
-			upgrade.CurrentLevel+= count;
-			return true;
-		}
-		
 		public bool ResetUpgradeLevel(Upgrade upgrade)
 		{
 			if (upgrade == null) return false;
-			upgrade.CurrentLevel = 0;
+			upgrade.UpgradeCurrentLevel = 0;
 			
 			return true;
 		}
 		
 		#endregion
+
+		#region Checker
+
+		private bool CurrentUpgradeLevelIsMax(Upgrade upgrade)
+		{
+			return upgrade.UpgradeCurrentLevel >= upgrade.MaxLevel;
+		}
+
+		#endregion
 		
 		#region Data
+
+		private void AddCount(ref Upgrade upgradeData,ref ItemsItemNames itemName,ref int count)
+		{
+			if (upgradeData.IsEmpty()) return;
+
+			switch (upgradeData.AddItem(itemName, count))
+			{
+				case UpgradeState.FinishLevel:
+					// upgradeData.GetCurrentRequirementsForUpgrade().InvokeEffect();
+					Debug.Log("Level complete - upgrade");
+					return;
+				case UpgradeState.AddedItem:
+					Debug.Log("Item added");
+					break;
+				case UpgradeState.NotFound:
+					Debug.Log("Item not found");
+					break;
+				case UpgradeState.FinishUpgrade:
+					Debug.Log("Upgrade complete");
+					Upgrades.Remove(upgradeData);
+					break;
+				case UpgradeState.WrongItem:
+					Debug.LogWarning("Wrong item");
+					break;
+				default:
+					Debug.LogError("Upgrade state not found");
+					throw new ArgumentOutOfRangeException();
+			}
+		}
 		
 		public void AddCountToUpgrade(Upgrade upgradeData,ItemsItemNames itemName,int count = 1)
 		{
 			if (upgradeData.IsEmpty()) return;
-			if (upgradeData.AddItem(itemName, count)) return;
 			
-			if (upgradeData.NextLevel())
-			{
-				Debug.Log("Upgrade complete");
-				Upgrades.Remove(upgradeData);
-			}
+			AddCount(ref upgradeData,ref itemName,ref count);
 		}
 		
 		public void AddCountToUpgrade(int upgrade,ItemsItemNames itemName,int count = 1)
 		{
 			var upgradeData = GetUpgradeWithID(upgrade);
 			
-			if (upgradeData.IsEmpty()) return;
-			if (upgradeData.AddItem(itemName, count)) return;
-			
-			if (upgradeData.NextLevel())
-			{
-				Debug.Log("Upgrade complete");
-				Upgrades.Remove(upgradeData);
-			}
-			
+			AddCount(ref upgradeData,ref itemName,ref count);
 		}
 		
 		public void AddCountToUpgrade(string upgrade,ItemsItemNames itemName,int count = 1)
 		{
 			var upgradeData = GetUpgradeWithName(upgrade);
 			
-			if (upgradeData.IsEmpty()) return;
-			if (upgradeData.AddItem(itemName, count)) return;
-			
-			if (upgradeData.NextLevel())
-			{
-				Debug.Log("Upgrade complete");
-				Upgrades.Remove(upgradeData);
-			}
+			AddCount(ref upgradeData,ref itemName,ref count);
 		}
 		
 		#endregion

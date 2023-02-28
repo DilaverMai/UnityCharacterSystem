@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7acb5b4014b346ed8fe41ffaf8be3e1b, type: 3}
-  m_Name: RequirementsForUpgradeData
+  m_Name: ExampleUpgrade
   m_EditorClassIdentifier: 
   Name: "Bu\xEDlding"
   UpgradeID: 0
