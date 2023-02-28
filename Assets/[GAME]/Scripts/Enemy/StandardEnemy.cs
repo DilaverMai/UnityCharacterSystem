@@ -3,6 +3,7 @@ using _GAME_.Scripts.Character.Abstracs;
 using Character;
 using Sirenix.OdinInspector;
 using System.Collections;
+using System.Collections.Generic;
 using _GAME_.Scripts.Character.Interfaces;
 using UnityEngine;
 
@@ -11,29 +12,27 @@ namespace _GAME_.Scripts.Enemy
     public class StandardEnemy : EnemyBase
     {
         [BoxGroup("Systems"),ReadOnly]
-        public HealthSystem HealthSystem;
-        [BoxGroup("Systems"),ReadOnly]
-        public Attacker<EnemyAnimationList> AttackSystem;
-        [BoxGroup("Systems"),ReadOnly]
-        public EnemyAnimationSystem AnimationSystemSystem;
+        public IAttacker<EnemyAnimationList> AttackSystem;
         [BoxGroup("Systems"),ReadOnly]
         public IMovable MoveSystem;
         [BoxGroup("Systems"),ReadOnly]
-        public DamageableFinderWithLayer finderWithLayer;
+        public IFinder<IDamageable> finderWithLayer;
+        [BoxGroup("Systems"),ReadOnly]
+        public IAnimable<EnemyAnimationList> AnimationSystemSystem;
+        [BoxGroup("Systems"),ReadOnly]
+        public IDamageable HealthSystem;
+
         private IUpdater[] _updaters;
         
+        public List<EnemyState> EnemyStates;
+
         private void Initialize()
         {
-            finderWithLayer = GetComponent<DamageableFinderWithLayer>();
-            HealthSystem = GetComponent<HealthSystem>();
-            AttackSystem = GetComponent<Attacker<EnemyAnimationList>>();
-            AnimationSystemSystem = GetComponent<EnemyAnimationSystem>();
+            finderWithLayer = GetComponent<IFinder<IDamageable>>();
+            HealthSystem = GetComponent<IDamageable>();
+            AttackSystem = GetComponent<IAttacker<EnemyAnimationList>>();
+            AnimationSystemSystem = GetComponent<IAnimable<EnemyAnimationList>>();
             MoveSystem = GetComponent<IMovable>();
-            
-            HealthSystem.OnDeath.AddListener(OnDeath);
-            HealthSystem.OnDeath.AddListener(() => AnimationSystemSystem.PlayAnimation(EnemyAnimationList.Death));
-            HealthSystem.OnHit.AddListener(() =>  AnimationSystemSystem.PlayAnimation(EnemyAnimationList.Hit)) ;
-            // AttackSystem.attackEvent.AddListener(() => AnimationSystemSystem.PlayAnimation(EnemyAnimationList.Attack));
         }
 
         private void AllRunInitialize()
@@ -63,22 +62,10 @@ namespace _GAME_.Scripts.Enemy
         {
             while (CharacterState != CharacterStates.Die)
             {
-                foreach (var update in _updaters)
-                {
-                    update.OnUpdate();
-                }
                 
-                var findTarget = finderWithLayer.FindTarget();
-                if (findTarget != null)
-                {
-                    AttackSystem.CheckForAttack(
-                        findTarget,
-                        findTarget.transform.position);
-                }
                 yield return new WaitForFixedUpdate();
             }
         }
         
     }
-    
 }

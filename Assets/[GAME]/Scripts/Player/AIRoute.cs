@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _GAME_.Scripts.Player
 {
-    public class AIRoute: AIMoveState, IRoute
+    public class AIRoute: AIMoveStateWithNav, IRoute
     {
         [ShowInInspector]
         private readonly Vector3[] routes;
@@ -18,15 +18,7 @@ namespace _GAME_.Scripts.Player
             routes = aiMoveData.routes;
             this.thisTransform = thisTransform;
         }
-
-        public override Vector3 GetTargetPosition()
-        {
-            if (ReachedDestination())
-                return NextWayPoint();
-                
-            return currentPoint;
-        }
-
+        
         public Vector3 NextWayPoint()
         {
             if (routes.Length == 0)
@@ -39,10 +31,25 @@ namespace _GAME_.Scripts.Player
             return currentPoint;
         }
 
+        public Vector3 GetCurrentRoutePoint()
+        {
+            if (ReachedDestination())
+                return NextWayPoint();
+                
+            return currentPoint;
+        }
+
+        public override void Move(Vector3 targetPosition = default)
+        {
+            if (ReachedDestination())
+                return;
+            
+            navMeshAgent.SetDestination(GetCurrentRoutePoint());
+        }
+
         public bool ReachedDestination()
         {
             return Vector3.Distance(thisTransform.position,currentPoint) <= stoppingDistance;
         }
-        
     }
 }

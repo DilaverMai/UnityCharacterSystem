@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 995287}
   - component: {fileID: 995288}
   - component: {fileID: 995289}
+  - component: {fileID: 995290}
   m_Layer: 0
   m_Name: Attacker
   m_TagString: Untagged
@@ -251,12 +252,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aee6592f6a1482a8e70a3739a7be2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NavAgent: {fileID: 995288}
-  onReachedDestination:
-    m_PersistentCalls:
-      m_Calls: []
   aiMoveStates:
   - {fileID: 11400000, guid: 79ae1dd9d08be304794a2375d8523586, type: 2}
+--- !u!114 &995290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617587adf38148f19c888a1c31934547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Model3D: {fileID: 0}
+  CharacterType: 0
+  CharacterState: 0
 --- !u!1 &15965784
 GameObject:
   m_ObjectHideFlags: 0

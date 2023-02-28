@@ -6,7 +6,7 @@ using UnityEngine;
 namespace _GAME_.Scripts.Character.Abstracs
 {
     [Serializable]
-    public abstract class CharacterAnimationSystem<T>:MonoBehaviour,IAnimable<T> where T:Enum
+    public class CharacterAnimationSystem<T>:MonoBehaviour,IAnimable<T> where T:Enum
     {
         [BoxGroup("Current Datas")]
         public Animator Anim;
